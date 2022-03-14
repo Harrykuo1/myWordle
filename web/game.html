@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>eel</title>
+    <meta charset="utf-8">
+    <!-- eel.js  -->
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Font-Awesome -->
+    <script src="https://kit.fontawesome.com/a9401ebe52.js" crossorigin="anonymous"></script>
+
+    <!-- MyCss -->
+    <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/css/game.css" />
+
+</head>
+
+<body">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand me-5 fs2" href="/menu.html">
+                <i class="fa-brands fa-wordpress me-2"></i>myWordle
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item me-4">
+                        <a class="nav-link active fs4" aria-current="page" href="/menu.html">
+                            <i class="fa-solid fa-house-chimney me-2"></i>Menu
+                        </a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link fs4" href="/game.html">
+                            <i class="fa-solid fa-gamepad me-2"></i>Game
+                        </a>
+                    </li>
+                    <li class="nav-item me-4">
+                        <a class="nav-link fs4" href="/setting.html">
+                            <i class="fa-solid fa-screwdriver-wrench me-2"></i>Setting
+                        </a>
+                    </li>
+
+                </ul>
+                <form class="d-flex flex-wrap">
+                    <input class="form-control accountIn me-2" type="search" placeholder="Account">
+                    <input class="form-control accountIn me-2" type="search" placeholder="Password">
+                    <button class="btn btn-outline-success" type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="board-container mt-5 d-grid gap-3">
+        <div class="row d-flex gap-3">
+            <div class="textBox"><span class="fs3">W</span></div>
+            <div class="textBox"><span class="fs3">O</span></div>
+            <div class="textBox"><span class="fs3">R</span></div>
+            <div class="textBox"><span class="fs3">L</span></div>
+            <div class="textBox"><span class="fs3">D</span></div>
+        </div>
+        <div class="row d-flex gap-3">
+            <div class="textBox"><span class="fs3">T</span></div>
+            <div class="textBox"><span class="fs3">A</span></div>
+            <div class="textBox"><span class="fs3">B</span></div>
+            <div class="textBox"><span class="fs3">L</span></div>
+            <div class="textBox"><span class="fs3">E</span></div>
+        </div>
+        <div class="row d-flex gap-3">
+            <div class="textBox"><span class="fs3">B</span></div>
+            <div class="textBox"><span class="fs3">R</span></div>
+            <div class="textBox"><span class="fs3">E</span></div>
+            <div class="textBox"><span class="fs3">A</span></div>
+            <div class="textBox"><span class="fs3">K</span></div>
+        </div>
+        <div class="row d-flex gap-3">
+            <div class="textBox"><span class="fs3">W</span></div>
+            <div class="textBox"><span class="fs3">A</span></div>
+            <div class="textBox"><span class="fs3">T</span></div>
+            <div class="textBox"><span class="fs3">C</span></div>
+            <div class="textBox"><span class="fs3">H</span></div>
+        </div>
+        <div class="row d-flex gap-3">
+            <div class="textBox"><span class="fs3">T</span></div>
+            <div class="textBox"><span class="fs3">O</span></div>
+            <div class="textBox"><span class="fs3">K</span></div>
+            <div class="textBox"><span class="fs3">E</span></div>
+            <div class="textBox"><span class="fs3">N</span></div>
+        </div>
+        <div class="row d-flex gap-3">
+            <div class="textBox"><span class="fs3">F</span></div>
+            <div class="textBox"><span class="fs3">G</span></div>
+            <div class="textBox"><span class="fs3">E</span></div>
+            <div class="textBox"><span class="fs3">T</span></div>
+            <div class="textBox"><span class="fs3">S</span></div>
+        </div>
+    </div>
+
+
+
+    </body>
+
+</html>
