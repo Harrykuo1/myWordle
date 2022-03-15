@@ -22,9 +22,15 @@
     <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="/css/game.css" />
 
+    <!-- Jquery-->
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script> 
+    
+    <!-- MyJs-->
+    <script src="/js/game.js"></script>
+
 </head>
 
-<body">
+<body onload="gameInit()">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -67,7 +73,7 @@
     </nav>
 
 
-    <div class="board-container mt-5 d-grid gap-3">
+    <div class="board-container mt-5 d-grid gap-3" id="gameBoard">
         <div class="row d-flex gap-3">
             <div class="textBox"><span class="fs3">W</span></div>
             <div class="textBox"><span class="fs3">O</span></div>
@@ -111,8 +117,6 @@
             <div class="textBox"><span class="fs3">S</span></div>
         </div>
     </div>
-
-
 
     </body>
 

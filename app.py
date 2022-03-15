@@ -1,9 +1,20 @@
 import eel
-
+import game as gm
 
 @eel.expose
-def hi():
-    pass
+def input(key):
+    print("Receive key:",end=" ")
+    myGame.input(key)
+    
+@eel.expose
+def init_game():
+    myGame.init_game()
+
+
+
+myGame = gm.game()
 eel.init("web")
 eel.start("menu.html", mode="my_portable_chromium", port=9487)
+
+
 
