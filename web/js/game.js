@@ -1,5 +1,6 @@
 $(document).ready(function () {
     alert("Ready to start ~~~~~~~");
+    eel.init_game()
     eel.vendor_board()
 });
 
@@ -13,7 +14,7 @@ $(document).keydown(function (e) {
         eel.input("BackSpace")
     }
     else if (keyNum == 13) {
-        eel.init_game()
+        //eel.init_game()
         eel.input("Enter")
     }
     else {
@@ -42,4 +43,15 @@ function vendorBoard(ymax, xmax){
         }
         gameBoard.appendChild(rowDiv);
     }
+}
+eel.expose(modifyBoard)
+function modifyBoard(y, x, ymax, xmax, key){
+    let pos = y*ymax + x
+    let item = document.getElementById("noWord" + pos)
+    item.innerText = key
+}
+
+eel.expose(webAlert)
+function webAlert(str){
+    alert(str)
 }
