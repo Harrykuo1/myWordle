@@ -1,5 +1,7 @@
 import eel
 import config as cfg
+import answer as ans
+
 
 @eel.expose
 class game:
@@ -11,6 +13,8 @@ class game:
         myCfg = cfg.config()
         self.guessLimit = myCfg.guessLimit
         self.wordLength = myCfg.wordLength
+        myAns = ans.answer()
+        self.ansWord = myAns.ansWord
         self.guessWord = ""
         #self.board = []
         self.y = 0
@@ -36,12 +40,23 @@ class game:
             if(key == "Enter"):
                 self.y += 1
                 self.x = 0
+                if(self.guessWord == self.ansWord):
+                    eel.webAlert("Correct")
+                else:
+                    eel.webAlert("Please Guess again")
+                self.guessWord = ""
 
         elif(key == "Enter"):
             print("Enter")
             if(self.x == self.wordLength):
                 self.y += 1
                 self.x = 0
+                if(self.guessWord == self.ansWord):
+                    eel.webAlert("Correct")
+                else:
+                    eel.webAlert("Please Guess again")
+                self.guessWord = ""
+
             if(self.x < self.wordLength):
                 eel.webAlert("Word is too short...")
 
@@ -52,6 +67,7 @@ class game:
             print("BackSpace")
         else:
             self.modify_board(key)
+            self.guessWord += key
             print(key)
             self.x+=1
 
