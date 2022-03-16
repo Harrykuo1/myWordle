@@ -57,10 +57,10 @@ function drawColor(y , xmax,colorList){
     for(let i=0; i<xmax;i++){
         let block = document.getElementById("no" + (posBasic + i));
         if(colorList[i] == 0){
-
+            block.classList.add("bg-secondary")
         }
         else if(colorList[i] ==1 ){
-
+            block.classList.add("bg-warning")
         }
         else{
             block.classList.add("bg-success")

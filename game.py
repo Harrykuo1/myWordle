@@ -1,7 +1,7 @@
 import eel
 import config as cfg
 import answer as ans
-
+from multiset import *
 
 @eel.expose
 class game:
@@ -13,9 +13,9 @@ class game:
         myCfg = cfg.config()
         self.guessLimit = myCfg.guessLimit
         self.wordLength = myCfg.wordLength
-        myAns = ans.answer()
-        myAns.create_word()
-        self.ansWord = myAns.ansWord
+        self.myAns = ans.answer()
+        self.myAns.create_word()
+        self.ansWord = self.myAns.ansWord
         print("Answer: ",self.ansWord)
         self.guessWord = ""
         self.y = 0
@@ -35,8 +35,12 @@ class game:
         eel.vendorBoard(self.guessLimit, self.wordLength)
 
     def input(self, key):
+        if(self.y == self.guessLimit):
+            self.isOver = True
         if(self.isOver):
-            pass
+            eel.webAlert("Game is Over!")
+            return 
+
         if(self.x == self.wordLength):
             if(key!="Enter" and key!="BackSpace"):
                 eel.webAlert("Word is too long...")
@@ -74,16 +78,27 @@ class game:
 
     def checkAns(self):
         self.wordColor = [0 for _ in range(self.wordLength)]
+        tmpSet = self.myAns.ansSet.copy()
+        print(tmpSet)
+        for i in range(self.wordLength):
+            if(self.guessWord[i] == self.ansWord[i]):
+                self.wordColor[i] = 2
+                tmpSet.remove(self.guessWord[i], 1)
+        for i in range(self.wordLength):
+            print(tmpSet)
+            if(self.guessWord[i] in tmpSet and self.wordColor[i] == 0):
+                self.wordColor[i] = 1
+                tmpSet.remove(self.guessWord[i], 1)
+        
         if(self.guessWord == self.ansWord):
             self.isOver = True
-            self.wordColor = [2 for _ in range(self.wordLength)]
             eel.drawColor(self.y, self.wordLength, self.wordColor)
             self.y += 1
             self.x = 0
             eel.webAlert("Correct")
         #elif(wordNotExist):
         else:
-            eel.drawColor()
+            eel.drawColor(self.y, self.wordLength, self.wordColor)
             self.y += 1
             self.x = 0
             eel.webAlert("Please Guess again")
