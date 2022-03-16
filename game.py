@@ -1,4 +1,5 @@
 import eel
+import config as cfg
 
 @eel.expose
 class game:
@@ -7,17 +8,20 @@ class game:
         self.init_game()
 
     def init_game(self):
-        self.guessLimit = 7
-        self.wordLength = 6
+        myCfg = cfg.config()
+        self.guessLimit = myCfg.guessLimit
+        self.wordLength = myCfg.wordLength
         self.guessWord = ""
-        self.board = []
+        #self.board = []
         self.y = 0
         self.x = 0
+        """
         for j in range(self.guessLimit):
             tmp = []
             for i in range(self.wordLength):
-                tmp.append(chr(ord('A')+j*3+i))
+                tmp.append("")
             self.board.append(tmp)
+        """
 
 
     def vendor_board(self):

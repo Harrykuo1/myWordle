@@ -1,5 +1,6 @@
 import eel
 import game as gm
+import config as cfg
 
 @eel.expose
 def input(key):
