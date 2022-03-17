@@ -14,7 +14,7 @@ class game:
         self.guessLimit = myCfg.guessLimit
         self.wordLength = myCfg.wordLength
         self.myAns = ans.answer()
-        self.myAns.create_word()
+        self.myAns.create_word(self.wordLength)
         self.ansWord = self.myAns.ansWord
         print("Answer: ",self.ansWord)
         self.guessWord = ""
