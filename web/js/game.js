@@ -14,7 +14,6 @@ $(document).keydown(function (e) {
         eel.input("BackSpace")
     }
     else if (keyNum == 13) {
-        //eel.init_game()
         eel.input("Enter")
     }
     else {
