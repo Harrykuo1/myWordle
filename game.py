@@ -50,7 +50,7 @@ class game:
                 if(self.x != 0):
                     self.x -= 1
                     self.guessWord = self.guessWord[:self.x]
-                    self.modify_board(eel.modifyBoard(self.y, self.x, self.guessLimit, self.wordLength, ""))
+                    eel.modifyBoard(self.y, self.x, self.guessLimit, self.wordLength, "")
                 print("BackSpace")
 
         elif(key == "Enter"):
@@ -65,7 +65,7 @@ class game:
             if(self.x != 0):
                 self.x -= 1
                 self.guessWord = self.guessWord[:self.x]
-                self.modify_board(eel.modifyBoard(self.y, self.x, self.guessLimit, self.wordLength, ""))
+                eel.modifyBoard(self.y, self.x, self.guessLimit, self.wordLength, "")
             print("BackSpace")
         else:
             self.modify_board(key)
@@ -96,7 +96,10 @@ class game:
             self.y += 1
             self.x = 0
             eel.webAlert("Correct")
-        #elif(wordNotExist):
+        elif(self.guessWord not in self.myAns.wordSet):
+            self.x = 0
+            for i in range(self.wordLength):
+                eel.modifyBoard(self.y, i, self.guessLimit, self.wordLength, "")
         else:
             eel.drawColor(self.y, self.wordLength, self.wordColor)
             self.y += 1

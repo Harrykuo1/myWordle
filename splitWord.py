@@ -14,7 +14,7 @@ try:
             break
         tmp = src.readline()
         
-        tmp = ''.join(tmp).strip('\n')
+        tmp = ''.join(tmp).strip('\n').upper()
         tmpLen = len(tmp)
         if(tmpLen>30):
             continue
