@@ -5,11 +5,19 @@
     flex-grow: 1;
     overflow: hidden;
 }
+
 .textBox{
     width: 65px;
     height: 65px;
-    border: 4px black solid;
+    border: 4px gray solid;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+span{
+    color:white
+}
+.fsTimer{
+    font-size: 50px;
 }
