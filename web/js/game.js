@@ -87,6 +87,7 @@ function start() {
 }*/
 function openLeftNav() {
     document.getElementById("leftSidebar").style.width = "280px";
+    
 }
 
 function closeLeftNav() {
@@ -95,9 +96,45 @@ function closeLeftNav() {
 
 function openRightNav() {
     document.getElementById("rightSidebar").style.width = "280px";
-    console.log("RRR")
 }
 
 function closeRightNav() {
     document.getElementById("rightSidebar").style.width = "0px";
+}
+
+eel.expose(drawLeftHint)
+function drawLeftHint(leftHint) {
+    let len = leftHint.length
+    let parent = document.getElementById("leftHint")
+
+    for (let i = 0; i < len; i++) {
+        let child = document.createElement("div");
+        child.setAttribute("class", "leftHintBox");
+        parent.appendChild(child)
+
+        let span = document.createElement("span");
+        let word = document.createTextNode(leftHint[i])
+        span.setAttribute("class", "fs4");
+        span.setAttribute("class", "blackImportant")
+        span.append(word)
+        child.appendChild(span)
+    }
+}
+
+eel.expose(drawRightHint)
+function drawRightHint(rightHint) {
+    let len = rightHint.length
+    let parent = document.getElementById("rightHint")
+
+    for (let i = 0; i < len; i++) {
+        let child = document.createElement("div");
+        child.setAttribute("class", "rightHintBox");
+        parent.appendChild(child)
+
+        let span = document.createElement("span");
+        let word = document.createTextNode(rightHint[i])
+        span.setAttribute("class", "fs4");
+        span.append(word)
+        child.appendChild(span)
+    }
 }

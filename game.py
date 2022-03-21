@@ -21,6 +21,10 @@ class game:
         self.y = 0
         self.x = 0
         self.isOver = False
+        self.ySet = set()
+        self.nSet = set()
+        self.yOldSet = set()
+        self.nOldSet = set()
         """
         self.board = []
         for j in range(self.guessLimit):
@@ -90,11 +94,13 @@ class game:
                 self.wordColor[i] = 1
                 tmpSet.remove(self.guessWord[i], 1)
         
+
         if(self.guessWord == self.ansWord):
             self.isOver = True
             eel.drawColor(self.y, self.wordLength, self.wordColor)
             self.y += 1
             self.x = 0
+            self.manageHint()
             eel.webAlert("Correct")
         elif(self.guessWord not in self.myAns.wordSet):
             eel.webAlert("Guessword is not exist\nPlease input again")
@@ -105,7 +111,31 @@ class game:
             eel.drawColor(self.y, self.wordLength, self.wordColor)
             self.y += 1
             self.x = 0
+            self.manageHint()
             eel.webAlert("Please Guess again")
 
         self.guessWord = ""    
     
+    def manageHint(self):
+        for i in range(self.wordLength):
+            if(self.wordColor[i] == 1):
+                self.ySet.add(self.guessWord[i])
+            if(self.wordColor[i] == 0):
+                self.nSet.add(self.guessWord[i])
+        self.ySet = self.ySet - self.yOldSet
+        self.nSet = self.nSet - self.nOldSet
+
+        self.yList = list(self.ySet)
+        self.nList = list(self.nSet)
+
+        eel.drawLeftHint(self.yList)
+        eel.drawRightHint(self.nList)
+
+        self.yOldSet.update(self.ySet)
+        self.nOldSet.update(self.nSet)
+
+
+
+        print("n: ",self.nList)
+
+            
