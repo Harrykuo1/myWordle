@@ -7,6 +7,7 @@ $(document).ready(function () {
 $(document).keydown(function (e) {
     var keyNum = e.keyCode
     var key = String.fromCharCode(keyNum)
+    console.log(key)
     if (65 <= keyNum && keyNum <= 90) {
         eel.input(key)
     }
@@ -84,3 +85,19 @@ function start() {
         timer.innerText = number + 0
     }, 1000);
 }*/
+function openLeftNav() {
+    document.getElementById("leftSidebar").style.width = "280px";
+}
+
+function closeLeftNav() {
+    document.getElementById("leftSidebar").style.width = "0px";
+}
+
+function openRightNav() {
+    document.getElementById("rightSidebar").style.width = "280px";
+    console.log("RRR")
+}
+
+function closeRightNav() {
+    document.getElementById("rightSidebar").style.width = "0px";
+}

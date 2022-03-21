@@ -1,0 +1,10 @@
+.leftSidebar {
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+    transition: 0.5s;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
