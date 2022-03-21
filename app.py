@@ -15,6 +15,12 @@ def init_game():
 def vendor_board():
     myGame.vendor_board()
 
+@eel.expose
+def call_ans():
+    ans= myGame.getAns()
+    print(ans)
+    eel.showAnswer(ans)
+
 myGame = gm.game()
 eel.init("web")
 eel.start("menu.html", mode="my_portable_chromium", port=9487)

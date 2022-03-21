@@ -138,3 +138,14 @@ document.onmousemove = function(event) {
         closeNav();
     }
 }
+
+function callAns(){
+    eel.call_ans()
+}
+
+eel.expose(showAnswer)
+function showAnswer(ans){
+    let item = document.getElementById("showAns")
+    console.log(ans)
+    item.setAttribute("placeholder", ans)
+}

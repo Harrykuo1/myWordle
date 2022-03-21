@@ -132,8 +132,8 @@ class game:
         self.yOldSet.update(self.ySet)
         self.nOldSet.update(self.nSet)
 
-
-
-        print("n: ",self.nList)
+    def getAns(self):
+        return self.ansWord
+    
 
             
