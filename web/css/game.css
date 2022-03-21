@@ -15,26 +15,6 @@
     align-items: center;
 }
 
-.leftHintBox{
-    width: 62px;
-    height: 62px;
-    border: 4px #B59F3B solid;
-    background-color: #B59F3B;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rightHintBox{
-    width: 62px;
-    height: 62px;
-    border: 4px #3A3A3C solid;
-    background-color: #3A3A3C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 span{
     color:white
 }

@@ -83,13 +83,11 @@ class game:
     def checkAns(self):
         self.wordColor = [0 for _ in range(self.wordLength)]
         tmpSet = self.myAns.ansSet.copy()
-        print(tmpSet)
         for i in range(self.wordLength):
             if(self.guessWord[i] == self.ansWord[i]):
                 self.wordColor[i] = 2
                 tmpSet.remove(self.guessWord[i], 1)
         for i in range(self.wordLength):
-            print(tmpSet)
             if(self.guessWord[i] in tmpSet and self.wordColor[i] == 0):
                 self.wordColor[i] = 1
                 tmpSet.remove(self.guessWord[i], 1)

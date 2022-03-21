@@ -85,20 +85,13 @@ function start() {
         timer.innerText = number + 0
     }, 1000);
 }*/
-function openLeftNav() {
+function openNav() {
     document.getElementById("leftSidebar").style.width = "280px";
-    
-}
-
-function closeLeftNav() {
-    document.getElementById("leftSidebar").style.width = "0px";
-}
-
-function openRightNav() {
     document.getElementById("rightSidebar").style.width = "280px";
 }
 
-function closeRightNav() {
+function closeNav() {
+    document.getElementById("leftSidebar").style.width = "0px";
     document.getElementById("rightSidebar").style.width = "0px";
 }
 
@@ -136,5 +129,12 @@ function drawRightHint(rightHint) {
         span.setAttribute("class", "fs4");
         span.append(word)
         child.appendChild(span)
+    }
+}
+
+document.onmousemove = function(event) {
+    var x = event.clientX
+    if (280 < x) {
+        closeNav();
     }
 }

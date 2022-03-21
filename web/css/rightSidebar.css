@@ -6,7 +6,17 @@
   right: 0px;
   background-color: white;
   z-index: 100;
-  transition: 0.5s;
+  transition: 0.8s;
   overflow-x: hidden;
   white-space: nowrap;
+}
+
+.rightHintBox{
+    width: 60px;
+    height: 60px;
+    background-color: #3A3A3C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }

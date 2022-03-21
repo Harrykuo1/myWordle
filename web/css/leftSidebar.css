@@ -4,7 +4,17 @@
     position: fixed;
     background-color: white;
     z-index: 100;
-    transition: 0.5s;
+    transition: 0.8s;
     overflow-x: hidden;
     white-space: nowrap;
+}
+
+.leftHintBox{
+    width: 60px;
+    height: 60px;
+    background-color: #B59F3B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 }
