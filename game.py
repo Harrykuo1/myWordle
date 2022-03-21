@@ -97,6 +97,7 @@ class game:
             self.x = 0
             eel.webAlert("Correct")
         elif(self.guessWord not in self.myAns.wordSet):
+            eel.webAlert("Guessword is not exist\nPlease input again")
             self.x = 0
             for i in range(self.wordLength):
                 eel.modifyBoard(self.y, i, self.guessLimit, self.wordLength, "")

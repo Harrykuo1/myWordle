@@ -22,5 +22,4 @@ try:
         wordFile[tmpLen].write('\n')
 
 except EOFError:
-    
     pass
