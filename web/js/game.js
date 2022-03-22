@@ -70,8 +70,8 @@ function drawColor(y, xmax, colorList) {
 
 eel.expose(webAlert)
 function webAlert(str) {
-    //alert(str)
-    console.log(str)
+    alert(str)
+    //console.log(str)
 }
 
 /*
@@ -133,20 +133,33 @@ function drawRightHint(rightHint) {
     }
 }
 
-document.onmousemove = function(event) {
+document.onmousemove = function (event) {
     var x = event.clientX
     if (280 < x) {
         closeNav();
     }
 }
 
-function callAns(){
+function callAns() {
     eel.call_ans()
 }
 
 eel.expose(showAnswer)
-function showAnswer(ans){
+function showAnswer(ans) {
     let item = document.getElementById("showAns")
     console.log(ans)
     item.setAttribute("placeholder", ans)
 }
+
+eel.expose(showEndModal)
+function showEndModal(isWin) {
+    if (isWin) {
+        $("#winModal").modal("show");
+    }
+    else {
+        $("#loseModal").modal("show");
+    }
+}
+
+
+

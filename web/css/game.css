@@ -1,24 +1,26 @@
 .board-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
-.textBox{
-    width: 65px;
-    height: 65px;
-    border: 4px var(--boxBorderColor) solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15%;
+.textBox {
+  width: 65px;
+  height: 65px;
+  border: 4px var(--boxBorderColor) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
 }
 
-span{
-    color:white
+span {
+  color: white;
 }
-.fsTimer{
-    font-size: 50px;
+.fsTimer {
+  font-size: 50px;
 }
+
+

@@ -21,6 +21,7 @@ class game:
         self.y = 0
         self.x = 0
         self.isOver = False
+        self.isWin = False
         self.ySet = set()
         self.nSet = set()
         self.yOldSet = set()
@@ -42,8 +43,8 @@ class game:
         if(self.y == self.guessLimit):
             self.isOver = True
         if(self.isOver):
-            eel.webAlert("Game is Over!")
-            return 
+            eel.showEndModal(self.isWin)
+            return
 
         if(self.x == self.wordLength):
             if(key!="Enter" and key!="BackSpace"):
@@ -92,13 +93,14 @@ class game:
                 self.wordColor[i] = 1
                 tmpSet.remove(self.guessWord[i], 1)
         
-
         if(self.guessWord == self.ansWord):
             self.isOver = True
+            self.isWin = True
             eel.drawColor(self.y, self.wordLength, self.wordColor)
             self.y += 1
             self.x = 0
             self.manageHint()
+            eel.showEndModal(self.isWin)
             eel.webAlert("Correct")
         elif(self.guessWord not in self.myAns.wordSet):
             eel.webAlert("Guessword is not exist\nPlease input again")
