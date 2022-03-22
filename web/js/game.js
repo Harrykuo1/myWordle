@@ -2,6 +2,14 @@ $(document).ready(function () {
     alert("Ready to start ~~~~~~~");
     eel.init_game()
     eel.vendor_board()
+    $('#winModal').on('show.bs.modal', function (e) {
+        var anim = "modal animate__animated animate__bounceIn"
+        changeAnim(anim);
+    })
+    $('#winModal').on('hide.bs.modal', function (e) {
+        var anim = "modal animate__animated animate__bounceOut"
+        changeAnim(anim);
+    })
 });
 
 $(document).keydown(function (e) {
@@ -160,6 +168,10 @@ function showEndModal(isWin) {
         $("#loseModal").modal("show");
     }
 }
+
+function changeAnim(x) {
+    $('#winModal').attr('class', x);
+};
 
 
 

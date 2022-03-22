@@ -30,6 +30,9 @@
   <!-- MyJs-->
   <script src="/js/game.js"></script>
 
+  <!-- Animate css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 </head>
 
 <body class="background">
@@ -100,7 +103,7 @@
 
 
   <!-- winModal -->
-  <div class="modal fade" id="winModal" tabindex="-1">
+  <div class="modal animate__animated" id="winModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content" style="border-radius: 15px">
 
@@ -112,11 +115,12 @@
         <div class="modal-footer p-0 m-0 d-flex flex-nowrap" style="height: 50px">
 
 
-          <button type="button" class="btn btn-secondary p-0 m-0"
+          <button type="button-close" class="btn btn-secondary p-0 m-0"
             style="width: 50%; border-radius:0px 0px 0px 15px; height: 50px" data-bs-dismiss="modal">Close</button>
 
           <button type="button" class="btn btn-primary p-0 m-0"
-            style="width: 50%; border-radius:0px 0px 15px 0px; height: 50px" onclick="location.href='/game.html'">Play again</button>
+            style="width: 50%; border-radius:0px 0px 15px 0px; height: 50px" onclick="location.href='/game.html'">Play
+            again</button>
 
         </div>
 
