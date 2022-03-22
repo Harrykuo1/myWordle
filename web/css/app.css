@@ -1,12 +1,12 @@
 :root {
   --navColor: #212529;
   --mainBackgroundColor: black;
-  --leftSidebarColor: gray;
-  --rightSidebarColor: white;
+  --leftSidebarColor: #2e2e2e;
+  --rightSidebarColor: #2e2e2e;
   --correctColor: #538d4e;
   --halfCorrectColor: #b59f3b;
-  --noExistColor: #3a3a3c;
-  --boxBorderColor: #3a3a3c;
+  --noExistColor: #5f5f5f;
+  --boxBorderColor: #5f5f5f;
 }
 
 body {
@@ -55,16 +55,62 @@ h5 {
   font-size: 16px;
 }
 
+.background {
+  background-color: var(--mainBackgroundColor);
+}
+
 .myGrayBackground {
   background-color: var(--noExistColor);
+  border: 4px var(--noExistColor) solid;
+  animation: toNoExist 3s 1 forwards;
+  -webkit-animation: toNoExist 3s 1 forwards;
 }
 
 .myYellowBackground {
   background-color: var(--halfCorrectColor);
+  border: 4px var(--halfCorrectColor) solid;
+  animation: toHalf 3s 1 forwards;
+  -webkit-animation: toHalf 3s 1 forwards;
 }
 
 .myGreenBackground {
   background-color: var(--correctColor);
+  border-color: var(--CorrectColor);
+  animation: toCorrect 3s 1 forwards;
+  -webkit-animation: toCorrect 3s 1 forwards;
+}
+
+@keyframes toNoExist {
+  from {
+    border: 4px var(--boxBorderColor) solid;
+    background-color: var(--mainBackgroundColor);
+  }
+  to {
+    border: 4px var(--noExistColor) solid;
+    background-color: var(--noExistColor);
+  }
+}
+
+@keyframes toHalf {
+  from {
+    border: 4px var(--boxBorderColor) solid;
+    background-color: var(--mainBackgroundColor);
+  }
+  to {
+    border: 4px var(--halfCorrectColor) solid;
+    background-color: var(--halfCorrectColor);
+  }
+}
+
+@keyframes toCorrect {
+  from {
+    border: 4px var(--boxBorderColor) solid;
+    background-color: var(--mainBackgroundColor);
+  }
+  to {
+    border: 4px var(--correctColor) solid;
+    background-color: var(--correctColor);
+  }
 }
 
 .blackImportant {

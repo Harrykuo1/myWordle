@@ -70,7 +70,8 @@ function drawColor(y, xmax, colorList) {
 
 eel.expose(webAlert)
 function webAlert(str) {
-    alert(str)
+    //alert(str)
+    console.log(str)
 }
 
 /*
@@ -108,7 +109,7 @@ function drawLeftHint(leftHint) {
         let span = document.createElement("span");
         let word = document.createTextNode(leftHint[i])
         span.setAttribute("class", "fs4");
-        span.setAttribute("class", "blackImportant")
+        //span.setAttribute("class", "blackImportant")
         span.append(word)
         child.appendChild(span)
     }
