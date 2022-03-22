@@ -1,5 +1,40 @@
-.mainBlock{
-    width: 50%;
-    background-color: white;
-    
+.settingBack {
+  background-color: #c2c5c8;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.mainBlock {
+  width: 50%;
+  height: 500px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  height: 18px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.showNumBox{
+    background-color: #c2c5c8;
+    width: 20px;
+    height: 20px;
 }

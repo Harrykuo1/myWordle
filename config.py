@@ -10,9 +10,9 @@ class config:
         try:
             file = open(self.settingPath, 'r')
             settingJson = file.read()
-            settingDict = json.loads(settingJson)
-            self.wordLength = settingDict["wordLength"]
-            self.guessLimit = settingDict["guessLimit"]
+            self.settingDict = json.loads(settingJson)
+            self.wordLength = self.settingDict["wordLength"]
+            self.guessLimit = self.settingDict["guessLimit"]
 
         except FileNotFoundError:
             print("setting.json is not existed")
@@ -26,4 +26,19 @@ class config:
         file = open(self.settingPath, 'w')
         file.write(settingJson)
         file.close()
+
+    def saveSetting(self, wordLength, guessLimit):
+        wordLength = int(wordLength)
+        guessLimit = int(guessLimit)
+        self.wordLength = wordLength
+        self.guessLimit = guessLimit
+        self.settingDict["wordLength"] = wordLength
+        self.settingDict["guessLimit"] = guessLimit
+        settingJson = json.dumps(self.settingDict)
+        print(settingJson)
+        file = open(self.settingPath, 'w')
+        file.write(settingJson)
+        file.close()
+
+
         

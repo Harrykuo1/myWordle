@@ -21,6 +21,11 @@ def call_ans():
     print(ans)
     eel.showAnswer(ans)
 
+@eel.expose
+def save_setting(wordLength, guessLimit):
+    myGame.saveSetting(wordLength, guessLimit)
+
+
 myGame = gm.game()
 eel.init("web")
 eel.start("menu.html", mode="my_portable_chromium", port=9487)

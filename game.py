@@ -10,9 +10,9 @@ class game:
         self.init_game()
 
     def init_game(self):
-        myCfg = cfg.config()
-        self.guessLimit = myCfg.guessLimit
-        self.wordLength = myCfg.wordLength
+        self.myCfg = cfg.config()
+        self.guessLimit = self.myCfg.guessLimit
+        self.wordLength = self.myCfg.wordLength
         self.myAns = ans.answer()
         self.myAns.create_word(self.wordLength)
         self.ansWord = self.myAns.ansWord
@@ -100,6 +100,7 @@ class game:
             self.y += 1
             self.x = 0
             self.manageHint()
+            eel.sleep(1.5)
             eel.showEndModal(self.isWin)
             eel.webAlert("Correct")
         elif(self.guessWord not in self.myAns.wordSet):
@@ -136,6 +137,11 @@ class game:
 
     def getAns(self):
         return self.ansWord
+
+    def saveSetting(self, wordLength, guessLimit):
+        self.myCfg.saveSetting(wordLength, guessLimit)
+
+
     
 
             

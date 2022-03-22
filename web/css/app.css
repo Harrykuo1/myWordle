@@ -62,22 +62,22 @@ h5 {
 .myGrayBackground {
   background-color: var(--noExistColor);
   border: 4px var(--noExistColor) solid;
-  animation: toNoExist 3s 1 forwards;
-  -webkit-animation: toNoExist 3s 1 forwards;
+  animation: toNoExist 2.5s 1 forwards;
+  -webkit-animation: toNoExist 2.5s 1 forwards;
 }
 
 .myYellowBackground {
   background-color: var(--halfCorrectColor);
   border: 4px var(--halfCorrectColor) solid;
-  animation: toHalf 3s 1 forwards;
-  -webkit-animation: toHalf 3s 1 forwards;
+  animation: toHalf 2.5s 1 forwards;
+  -webkit-animation: toHalf 2.5s 1 forwards;
 }
 
 .myGreenBackground {
   background-color: var(--correctColor);
   border-color: var(--CorrectColor);
-  animation: toCorrect 3s 1 forwards;
-  -webkit-animation: toCorrect 3s 1 forwards;
+  animation: toCorrect 2.5s 1 forwards;
+  -webkit-animation: toCorrect 2.5s 1 forwards;
 }
 
 @keyframes toNoExist {
