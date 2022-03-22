@@ -1,4 +1,15 @@
-body{
+:root {
+  --navColor: #212529;
+  --mainBackgroundColor: black;
+  --leftSidebarColor: gray;
+  --rightSidebarColor: white;
+  --correctColor: #538d4e;
+  --halfCorrectColor: #b59f3b;
+  --noExistColor: #3a3a3c;
+  --boxBorderColor: #3a3a3c;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
@@ -44,20 +55,18 @@ h5 {
   font-size: 16px;
 }
 
-
-.myGrayBackground{
-  background-color: #3A3A3C
+.myGrayBackground {
+  background-color: var(--noExistColor);
 }
 
-.myYellowBackground{
-  background-color: #B59F3B
+.myYellowBackground {
+  background-color: var(--halfCorrectColor);
 }
 
-.myGreenBackground{
-  background-color: #538D4E
+.myGreenBackground {
+  background-color: var(--correctColor);
 }
 
-.blackImportant{
+.blackImportant {
   color: black !important;
 }
-

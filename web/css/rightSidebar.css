@@ -4,7 +4,7 @@
   width: 0px;
   height: 100%;
   right: 0px;
-  background-color: white;
+  background-color: var(--rightSidebarColor);
   z-index: 100;
   transition: 0.8s;
   overflow-x: hidden;
@@ -14,7 +14,7 @@
 .rightHintBox{
     width: 60px;
     height: 60px;
-    background-color: #3A3A3C;
+    background-color: var(--noExistColor);
     display: flex;
     justify-content: center;
     align-items: center;

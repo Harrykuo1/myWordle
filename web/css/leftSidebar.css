@@ -2,7 +2,7 @@
     width: 0px;
     height: 100%;
     position: fixed;
-    background-color: white;
+    background-color: var(--leftSidebarColor);
     z-index: 100;
     transition: 0.8s;
     overflow-x: hidden;
@@ -12,7 +12,7 @@
 .leftHintBox{
     width: 60px;
     height: 60px;
-    background-color: #B59F3B;
+    background-color: var(--halfCorrectColor);
     display: flex;
     justify-content: center;
     align-items: center;

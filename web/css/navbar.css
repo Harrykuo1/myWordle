@@ -1,3 +1,7 @@
+.myNavbar{
+    background-color: var(--navColor);
+}
+
 .accountIn{
     width: 150px;
 }
