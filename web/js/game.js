@@ -4,11 +4,20 @@ $(document).ready(function () {
     eel.vendor_board()
     $('#winModal').on('show.bs.modal', function (e) {
         var anim = "modal animate__animated animate__bounceIn"
-        changeAnim(anim);
+        changeWinAnim(anim);
     })
     $('#winModal').on('hide.bs.modal', function (e) {
         var anim = "modal animate__animated animate__bounceOut"
-        changeAnim(anim);
+        changeWinAnim(anim);
+    })
+
+    $('#loseModal').on('show.bs.modal', function (e) {
+        var anim = "modal animate__animated animate__bounceIn"
+        changeLoseAnim(anim);
+    })
+    $('#loseModal').on('hide.bs.modal', function (e) {
+        var anim = "modal animate__animated animate__bounceOut"
+        changeLoseAnim(anim);
     })
 });
 
@@ -78,8 +87,8 @@ function drawColor(y, xmax, colorList) {
 
 eel.expose(webAlert)
 function webAlert(str) {
-    alert(str)
-    //console.log(str)
+    //alert(str)
+    console.log(str)
 }
 
 /*
@@ -169,8 +178,12 @@ function showEndModal(isWin) {
     }
 }
 
-function changeAnim(x) {
+function changeWinAnim(x) {
     $('#winModal').attr('class', x);
+};
+
+function changeLoseAnim(x) {
+    $('#loseModal').attr('class', x);
 };
 
 
