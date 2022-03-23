@@ -33,8 +33,6 @@ def turn_end():
 def get_time_limit():
     return myGame.getTimeLimit()
 
-
-
 myGame = gm.game()
 eel.init("web")
 eel.start("menu.html", mode="my_portable_chromium", port=9487)
