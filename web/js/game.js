@@ -2,6 +2,9 @@ $(document).ready(function () {
     alert("Ready to start ~~~~~~~");
     eel.init_game()
     eel.vendor_board()
+
+    timeCount()
+
     $('#winModal').on('show.bs.modal', function (e) {
         var anim = "modal animate__animated animate__bounceIn"
         changeWinAnim(anim);
@@ -186,5 +189,32 @@ function changeLoseAnim(x) {
     $('#loseModal').attr('class', x);
 };
 
+var count, originCount
+
+async function timeCount() {
+    var countSpan = document.getElementById("countNum");
+    originCount = await eel.get_time_limit()();
+    count = originCount
+    countSpan.innerHTML = count;
+    var timer = null;
+    let alreadyEnd = true
+    timer = setInterval(function () {
+        if (count > 0) {
+            count = count - 1;
+            countSpan.innerHTML = count;
+        }
+        else {
+            if(alreadyEnd){
+                eel.turn_end()
+                alreadyEnd = false
+            }
+        }
+    }, 1000);
+}
+
+eel.expose(resetCount)
+function resetCount(){
+    count = originCount + 1
+}
 
 

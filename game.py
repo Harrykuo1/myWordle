@@ -13,6 +13,7 @@ class game:
         self.myCfg = cfg.config()
         self.guessLimit = self.myCfg.guessLimit
         self.wordLength = self.myCfg.wordLength
+        self.timeLimit = self.myCfg.timeLimit
         self.myAns = ans.answer()
         self.myAns.create_word(self.wordLength)
         self.ansWord = self.myAns.ansWord
@@ -113,6 +114,7 @@ class game:
             self.y += 1
             self.x = 0
             self.manageHint()
+            eel.resetCount()
             eel.webAlert("Please Guess again")
 
         self.guessWord = ""    
@@ -138,10 +140,16 @@ class game:
     def getAns(self):
         return self.ansWord
 
-    def saveSetting(self, wordLength, guessLimit):
-        self.myCfg.saveSetting(wordLength, guessLimit)
+    def saveSetting(self, wordLength, guessLimit, timeLimit):
+        self.myCfg.saveSetting(wordLength, guessLimit, timeLimit)
 
-
+    def turnEnd(self):
+        self.isOver = True
+        eel.showEndModal(self.isWin)
+    
+    def getTimeLimit(self):
+        print(self.timeLimit)
+        return self.timeLimit
     
 
             

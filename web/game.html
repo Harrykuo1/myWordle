@@ -85,12 +85,14 @@
   <div class="leftSidebar" id="leftSidebar">
     <div class="d-flex gap-2 flex-wrap ps-2 pe-2 pt-2" id="leftHint"></div>
   </div>
-
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-sm-1">
-      <button type="button" class="btn btn-outline-light" onmousedown="openNav()">Tips</button>
+      <button type="button" class="btn btn-outline-light ms-2" onmousedown="openNav()">Tips</button>
     </div>
     <div class="col-sm-10 board-container d-grid gap-3" id="gameBoard" style="z-index: 100">
+      <div class="d-flex justify-content-center mb-1">
+        <span class="fs1" id="countNum">60</span>
+      </div>
     </div>
     <div class="col-sm-1">
 
@@ -100,6 +102,7 @@
   <div class="rightSidebar float-end" id="rightSidebar">
     <div class="d-flex gap-2 flex-wrap ps-2 pe-2 pt-2" id="rightHint"></div>
   </div>
+
 
 
   <!-- winModal -->

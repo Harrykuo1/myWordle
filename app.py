@@ -22,8 +22,17 @@ def call_ans():
     eel.showAnswer(ans)
 
 @eel.expose
-def save_setting(wordLength, guessLimit):
-    myGame.saveSetting(wordLength, guessLimit)
+def save_setting(wordLength, guessLimit, timeLimit):
+    myGame.saveSetting(wordLength, guessLimit, timeLimit)
+
+@eel.expose
+def turn_end():
+    myGame.turnEnd()
+
+@eel.expose
+def get_time_limit():
+    return myGame.getTimeLimit()
+
 
 
 myGame = gm.game()

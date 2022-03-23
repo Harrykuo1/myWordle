@@ -16,7 +16,7 @@
 
     <!-- Font-Awesome -->
     <script src="https://kit.fontawesome.com/a9401ebe52.js" crossorigin="anonymous"></script>
-
+    
     <!-- MyCss -->
     <link rel="stylesheet" type="text/css" href="/css/app.css" />
     <link rel="stylesheet" type="text/css" href="/css/navbar.css" />
@@ -26,10 +26,10 @@
     <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
 
     <!-- MyJs-->
-    <script src="/js/setting.js"></script>
+    
     <!-- Animate css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    
 </head>
 
 <body class="settingBack">
@@ -77,16 +77,22 @@
         <div class="board-container">
             <div class="mainBlock mt-5">
                 <h3 class="mt-2 ms-3">Word Length:<span class="ms-3" id="showWordLength">5</span></h3>
-
                 <div class="slidecontainer mt-3 ms-3">
                     <input type="range" min=4 max=10 value=5 class="slider" id="wordLengthSlider">
                 </div>
 
                 <h3 class="mt-3 ms-3">Guess Limit:<span class="ms-3" id="showGuessLimit">6</span></h3>
-
                 <div class="slidecontainer mt-3 ms-3">
                     <input type="range" min=1 max=9 value=6 class="slider" id="guessLimitSlider">
                 </div>
+
+                <h3 class="mt-3 ms-3">Time Limit:<span class="ms-3" id="showTimeLimit">60</span></h3>
+                <div class="slidecontainer mt-3 ms-3">
+                    <input type="range" min=10 max=300 value=60 step=10 class="slider" id="timeLimitSlider">
+                </div>
+
+
+
 
                 <button class="btn btn-primary mt-3 ms-3" type="button" onclick="saveSetting()">Save Setting</button>
 
@@ -95,6 +101,7 @@
 
     </div>
 
-
+    <!-- MyJs-->
     <script src="/js/setting.js"></script>
+    
 </body>
